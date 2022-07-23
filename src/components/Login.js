@@ -51,7 +51,7 @@ const Login = () => {
           },
         };
         const { data } = await axios.post(
-          "http://localhost:5000/user/login",
+          "https://chat-1-on-1.herokuapp.com/user/login",
           {
             email,
             password,

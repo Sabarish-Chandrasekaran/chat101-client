@@ -27,7 +27,10 @@ const MyChats = ({ fetchAgain }) => {
         },
       };
 
-      const { data } = await axios.get("http://localhost:5000/chat", config);
+      const { data } = await axios.get(
+        "https://chat-1-on-1.herokuapp.com/chat",
+        config
+      );
       setChats(data);
     } catch (error) {
       toast.error("Error Occured! Failed to Load the chats", toastOptions);

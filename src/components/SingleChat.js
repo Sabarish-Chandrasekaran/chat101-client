@@ -22,7 +22,7 @@ import animationData from "../animations/typing.json";
 
 import io from "socket.io-client";
 
-const ENDPOINT = "http://localhost:5000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
+const ENDPOINT = "https://chat-1-on-1.herokuapp.com"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -66,7 +66,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `http://localhost:5000/message/${selectedChat._id}`,
+        `https://chat-1-on-1.herokuapp.com/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -90,7 +90,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "http://localhost:5000/message",
+          "https://chat-1-on-1.herokuapp.com/message",
           {
             content: newMessage,
             chatId: selectedChat,

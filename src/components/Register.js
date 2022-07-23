@@ -56,7 +56,7 @@ const Register = () => {
           },
         };
         const { data } = await axios.post(
-          "http://localhost:5000/user/register",
+          "https://chat-1-on-1.herokuapp.com/user/register",
           {
             username,
             email,

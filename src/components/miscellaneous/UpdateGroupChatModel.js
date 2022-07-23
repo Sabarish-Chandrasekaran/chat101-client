@@ -50,7 +50,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         },
       };
       const { data } = await axios.get(
-        `http://localhost:5000/user?search=${search}`,
+        `https://chat-1-on-1.herokuapp.com/user?search=${search}`,
         config
       );
 
@@ -74,7 +74,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/chat/rename`,
+        `https://chat-1-on-1.herokuapp.com/chat/rename`,
         {
           chatId: selectedChat._id,
           chatName: groupChatName,
@@ -114,7 +114,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/chat/groupadd`,
+        `https://chat-1-on-1.herokuapp.com/chat/groupadd`,
         {
           chatId: selectedChat._id,
           userId: user1._id,
@@ -148,7 +148,7 @@ const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
         },
       };
       const { data } = await axios.put(
-        `http://localhost:5000/chat/groupremove`,
+        `https://chat-1-on-1.herokuapp.com/chat/groupremove`,
         {
           chatId: selectedChat._id,
           userId: user1._id,

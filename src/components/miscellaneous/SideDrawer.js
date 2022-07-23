@@ -78,7 +78,7 @@ function SideDrawer() {
       };
 
       const { data } = await axios.get(
-        `http://localhost:5000/user?search=${search}`,
+        `https://chat-1-on-1.herokuapp.com/user?search=${search}`,
         config
       );
 
@@ -99,7 +99,7 @@ function SideDrawer() {
         },
       };
       const { data } = await axios.post(
-        `http://localhost:5000/chat`,
+        `https://chat-1-on-1.herokuapp.com/chat`,
         { userId },
         config
       );
