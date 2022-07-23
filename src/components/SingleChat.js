@@ -17,9 +17,6 @@ import "./styles.css";
 import axios from "axios";
 import ScrollableChat from "./ScrollableChat";
 
-import Lottie from "react-lottie";
-import animationData from "../animations/typing.json";
-
 import io from "socket.io-client";
 
 const ENDPOINT = "https://chat-1-on-1.herokuapp.com"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
@@ -32,15 +29,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     pauseOnHover: true,
     draggable: true,
     theme: "light",
-  };
-
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
   };
 
   const [messages, setMessages] = useState([]);
@@ -219,9 +207,17 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
               </div>
             )}
             {istyping ? (
-              <div>
-                typing
-              </div>
+              <Typography
+                component="span"
+                sx={{
+                  backgroundColor: "rgba(255,255,255,0.7)",
+                  maxWidth: "10%",
+                  borderRadius: "10px",
+                  paddingLeft:"10px"
+                }}
+              >
+                typing...
+              </Typography>
             ) : (
               <></>
             )}
