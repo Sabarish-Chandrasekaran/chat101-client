@@ -16,6 +16,7 @@ import {
   List,
   CircularProgress,
   MenuList,
+  Badge,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
@@ -28,8 +29,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import ChatLoading from "../ChatLoading";
 import UserListItem from "../userAvatar/UserListItem";
-import NotificationBadge from "react-notification-badge";
-import { Effect } from "react-notification-badge";
 import { getSender } from "../../config/ChatLogics";
 
 function SideDrawer() {
@@ -169,11 +168,9 @@ function SideDrawer() {
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
             >
-              <NotificationBadge
-                count={notification.length}
-                effect={Effect.SCALE}
-              />
-              <NotificationsActiveIcon />
+              <Badge badgeContent={notification.length} color="secondary">
+                <NotificationsActiveIcon />
+              </Badge>
             </Button>
           </Tooltip>
           <Menu
